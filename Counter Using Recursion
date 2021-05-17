@@ -1,0 +1,20 @@
+#include<iostream>
+#include"unistd.h"
+using namespace std;
+int counter(int num)
+{
+    if(num==1)
+    return num;
+    cout<<num<<endl;
+    num--;
+    sleep(1);
+    counter(num);
+}
+int main()
+{
+    cout<<"Enter Value:";
+    int x;
+    cin>>x;
+    cout<<counter(x)<<endl;;
+    return 0;
+}
