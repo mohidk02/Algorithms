@@ -1,0 +1,19 @@
+#include<iostream>
+using namespace std;
+int factorial(int num,int result)
+{
+    if(num==1)
+    return result;
+    num--;
+    result=result*num;
+    factorial(num,result);
+}
+int main()
+{
+    cout<<"Enter Value to calculate factorial:";
+    int x;
+    cin>>x;
+    int result=x;
+    cout<<"\n"<<factorial(x,result)<<endl;
+    return 0;
+}
