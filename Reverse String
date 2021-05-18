@@ -1,0 +1,24 @@
+#include<iostream>
+#include<stack>
+using namespace std;
+int main ()
+{
+    stack<char> s;
+    cout<<"Program to reverse string using stacks\n";
+    string word;
+    cout<<"Enter String:";
+    cin>>word;
+    for(int i=0;i<word.size();i++)
+    {
+        s.push(word[i]);
+    }
+    cout<<"Reversed string:";
+    while(!s.empty())
+    {
+        char c=s.top();
+        cout<<c;
+        s.pop();
+    }
+    cout<<endl;
+    return 0;
+}
