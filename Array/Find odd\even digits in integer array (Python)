@@ -1,0 +1,19 @@
+arr=[1,22,333,4444,55555]
+print("Print 0 if odd and 1 if even number of digits")
+def find(arr):
+  result=""
+  n=len(arr)
+  for ele in arr:
+    sum=0
+    while (ele>0):
+      ele=int(ele/10)
+      sum+=1
+    if sum%2==0:
+      result=result+'1'
+      sum=0
+    else:
+      result=result+'0'
+      sum=0
+  return result
+
+print(find(arr))
