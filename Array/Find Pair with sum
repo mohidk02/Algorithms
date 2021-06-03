@@ -1,0 +1,38 @@
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+void printpair(int arr[],int sum,int size)
+{
+    int current = 0;
+    int  last = size-1;
+    bool status=false;
+    while (current < last)
+    {
+        if(arr[current]+arr[last]==sum)
+        {
+            cout<<"("<<arr[current]<<","<<arr[last]<<") \n";
+            status=true;
+        }
+        if(arr[current]+arr[last]>sum)
+        {
+            last--;
+        }
+        else
+        {
+            current++;
+        }
+    }
+    if(!status)
+    cout<<"No Pair for this sum\n";
+}
+int main()
+{
+    int arr[] = {2, 3, 4, -2, 6, 8, 9, 11};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    sort(arr,arr+n);
+    cout<<"Enter Sum:";
+    int sum;
+    cin>>sum;
+    printpair(arr,sum,n);
+    return 0;
+}
