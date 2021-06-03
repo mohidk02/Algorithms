@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+void rotatearray(int arr[],int times,int size)
+{
+    int mod=times%size;
+    cout<<"Rotated array:";
+    for (int i=0;i<size;i++)
+    {   
+        cout<<arr[(mod+i)%size]<<" ";
+    }
+    cout<<endl;
+}
+void printarray(int arr[],int size)
+{
+    for(int i=0;i<size;i++)
+    cout<<arr[i]<<" ";
+
+    cout<<"\n";
+}
+int main()
+{
+    int arr[]={1,2,3,4,5}; 
+    int n=sizeof(arr)/sizeof(arr[0]);
+    cout<<"Original Array: ";
+    printarray(arr,n);
+    cout<<"How many rotations do you want: ";
+    int d;
+    cin>>d;
+    rotatearray(arr,d,n);
+    return 0;
+}
