@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    cout<<"This is a program that counts the digits of each integer of the given array\nIf integer has even number of digits then print 1 else print 0\n\n";
+    int arr[]={1,22,333,4444,55555};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    string result="";
+    for(int i=0;i<n;i++)
+    {
+        int sum=0;
+        int rem=arr[i];
+        while(rem!=0)
+        {
+            rem=rem/10;
+            sum++;
+        }
+        if(sum%2==0)
+        result=result+'1';
+        else
+        {
+            result=result+'0';
+        }
+        sum=0;
+    }
+    cout<<"Result="<<result<<endl<<endl;
+    return 0;
+}
