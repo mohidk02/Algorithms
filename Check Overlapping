@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+struct Point
+{
+    int x,y;
+
+    
+};
+
+bool checkoverlap(Point x1,Point y1,Point x2,Point y2)
+{
+    //check if given shape is a line
+    if (x1.y==y1.y||x1.x==y1.x || x2.y==y2.y || x2.x==y2.x)
+    return false;
+    //check left or right
+    else if (x2.x>=y1.x || x1.x>=y2.x)
+    return false;
+    //check above or below
+    else if (x1.y<=y2.y || y1.y>=x2.y)
+    return false;
+    
+    return true;
+}
+int main()
+{
+    Point l1 = { 0, 10 }, r1 = { 10, 0 };
+    Point l2 = { 5, 5 }, r2 = { 15, 0 };
+    if (checkoverlap(l1, r1, l2, r2))
+        cout<<"Rectangles Overlap\n";
+    else
+        cout<<"Rectangles Don't Overlap\n";
+    return 0;
+}
